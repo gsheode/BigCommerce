@@ -1,8 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
 import { useRouter } from "next/router";
-import Router from "next/router";
 
 export const getStaticProps = async () => {
   const response = await fetch('https://www.bigcommerce.com/actions/bcCore/interview/getShowcaseEntryIds')
@@ -11,10 +8,6 @@ export const getStaticProps = async () => {
       throw new Error('api not responding')
     }
     )
-
-   
-    
-
   return {
     props: { data: response }
   }
